@@ -1,5 +1,4 @@
 # WebStore_Project
-# Simple Web Store Demo
 
 ## Description
 
