@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Store</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css"> </head>
+<body class="bg-gray-50">
+
+    <header class="bg-white shadow-md sticky top-0 z-50 rounded-b-lg mb-4">
+        <nav class="container mx-auto px-6 py-3 flex flex-wrap justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-gray-800 mr-6">WebStore</a>
+            <div class="relative flex-grow max-w-xs my-2 sm:my-0 order-3 sm:order-2 w-full sm:w-auto">
+                 <input type="search" placeholder="Search products..." class="w-full px-4 py-2 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" aria-label="Search products">
+                 <svg class="absolute right-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                 </svg>
+            </div>
+            <div class="space-x-4 order-2 sm:order-3">
+                <a href="#" class="text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">Home</a>
+                <a href="#products" class="text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">Products</a>
+                <a href="#" id="cart-link" class="text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium relative">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline-block mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                    </svg>
+                    Cart
+                    <span id="cart-count-badge" class="absolute -top-2 -right-2 bg-red-500 text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center hidden">0</span>
+                </a>
+                <a href="#" class="text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">Contact</a>
+                <a href="login.php" class="text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">Login</a>
+                <a href="signup.php" class="bg-blue-500 hover:bg-blue-600 text-white px-3 py-2 rounded-md text-sm font-medium transition duration-300">Sign Up</a>
+            </div>
+        </nav>
+    </header>
+
+    <section class="bg-gradient-to-r from-blue-600 to-indigo-700 text-white py-16 rounded-lg m-4 shadow-lg">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-3">Discover Amazing Deals!</h1>
+            <p class="text-lg md:text-xl mb-8 text-indigo-100">Your one-stop shop for quality products.</p>
+            <a href="#products" class="bg-white text-indigo-700 font-semibold py-3 px-8 rounded-lg hover:bg-gray-100 transition duration-300 shadow hover:shadow-md text-lg">
+                Shop Now
+            </a>
+        </div>
+    </section>
+
+    <main id="products" class="container mx-auto px-6 py-10">
+        <h2 class="text-3xl font-semibold text-gray-800 mb-8 text-center">Our Products</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+
+            <div class="bg-white rounded-lg shadow-md overflow-hidden transform hover:scale-105 transition duration-300 flex flex-col" data-product-id="p1">
+                <img src="img/mouse.jpg" alt="Cool Gadget" class="product-image" onerror="this.onerror=null; this.src='https://placehold.co/600x400/cccccc/ffffff?text=Gadget+Not+Found'; this.style.objectFit='contain';">
+                <div class="p-4 flex flex-col flex-grow">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-2">Mouse RGB</h3>
+                    <p class="text-gray-600 text-sm mb-4 flex-grow">Wired Gaming Mouse with 7 LED Lights, 6 Buttons, for PC Laptop Desktop - Black</p>
+                    <div class="flex justify-between items-center mt-auto">
+                        <span class="text-xl font-bold text-gray-900">$49.99</span>
+                        <button class="add-to-cart-btn bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg transition duration-300 shadow-sm hover:shadow-md" data-product-name="Cool Gadget" data-price="49.99" aria-label="Add Cool Gadget to cart">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-md overflow-hidden transform hover:scale-105 transition duration-300 flex flex-col" data-product-id="p2">
+                 <img src="img/watch.jpg" alt="Stylish Watch" class="product-image" onerror="this.onerror=null; this.src='https://placehold.co/600x400/cccccc/ffffff?text=Watch+Not+Found'; this.style.objectFit='contain';">
+                <div class="p-4 flex flex-col flex-grow">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-2">Stylish Watch</h3>
+                    <p class="text-gray-600 text-sm mb-4 flex-grow">Keep track of time in style. Now with more features.</p>
+                    <div class="flex justify-between items-center mt-auto">
+                        <span class="text-xl font-bold text-gray-900">$129.00</span>
+                        <button class="add-to-cart-btn bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg transition duration-300 shadow-sm hover:shadow-md" data-product-name="Stylish Watch" data-price="129.00" aria-label="Add Stylish Watch to cart">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-md overflow-hidden transform hover:scale-105 transition duration-300 flex flex-col" data-product-id="p3">
+                 <img src="img/shoes.jpg" alt="Comfy Shoes" class="product-image" onerror="this.onerror=null; this.src='https://placehold.co/600x400/cccccc/ffffff?text=Shoes+Not+Found'; this.style.objectFit='contain';">
+                <div class="p-4 flex flex-col flex-grow">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-2">Comfy Shoes</h3>
+                    <p class="text-gray-600 text-sm mb-4 flex-grow">Walk comfortably all day long. Ultra comfort edition.</p>
+                    <div class="flex justify-between items-center mt-auto">
+                        <span class="text-xl font-bold text-gray-900">$75.50</span>
+                        <button class="add-to-cart-btn bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg transition duration-300 shadow-sm hover:shadow-md" data-product-name="Comfy Shoes" data-price="75.50" aria-label="Add Comfy Shoes to cart">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-md overflow-hidden transform hover:scale-105 transition duration-300 flex flex-col" data-product-id="p4">
+                 <img src="img/earbuds.jpg" alt="Wireless Earbuds" class="product-image" onerror="this.onerror=null; this.src='https://placehold.co/600x400/cccccc/ffffff?text=Earbuds+Not+Found'; this.style.objectFit='contain';">
+                <div class="p-4 flex flex-col flex-grow">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-2">Wireless Earbuds</h3>
+                    <p class="text-gray-600 text-sm mb-4 flex-grow">Listen to music without wires. Air model, lightweight.</p>
+                    <div class="flex justify-between items-center mt-auto">
+                        <span class="text-xl font-bold text-gray-900">$89.99</span>
+                        <button class="add-to-cart-btn bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg transition duration-300 shadow-sm hover:shadow-md" data-product-name="Wireless Earbuds" data-price="89.99" aria-label="Add Wireless Earbuds to cart">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-md overflow-hidden transform hover:scale-105 transition duration-300 flex flex-col" data-product-id="p5">
+                 <img src="img/backpack.jpg" alt="Smart Backpack" class="product-image" onerror="this.onerror=null; this.src='https://placehold.co/600x400/cccccc/ffffff?text=Backpack+Not+Found'; this.style.objectFit='contain';">
+                <div class="p-4 flex flex-col flex-grow">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-2">Smart Backpack</h3>
+                    <p class="text-gray-600 text-sm mb-4 flex-grow">Carry your essentials with built-in charging port.</p>
+                    <div class="flex justify-between items-center mt-auto">
+                        <span class="text-xl font-bold text-gray-900">$65.00</span>
+                        <button class="add-to-cart-btn bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg transition duration-300 shadow-sm hover:shadow-md" data-product-name="Smart Backpack" data-price="65.00" aria-label="Add Smart Backpack to cart">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-md overflow-hidden transform hover:scale-105 transition duration-300 flex flex-col" data-product-id="p6">
+                 <img src="img/coffee.jpg" alt="Coffee Maker" class="product-image" onerror="this.onerror=null; this.src='https://placehold.co/600x400/cccccc/ffffff?text=Coffee+Maker+Not+Found'; this.style.objectFit='contain';">
+                <div class="p-4 flex flex-col flex-grow">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-2">Coffee Maker</h3>
+                    <p class="text-gray-600 text-sm mb-4 flex-grow">Brew the perfect cup every morning. Quick & easy.</p>
+                    <div class="flex justify-between items-center mt-auto">
+                        <span class="text-xl font-bold text-gray-900">$55.95</span>
+                        <button class="add-to-cart-btn bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg transition duration-300 shadow-sm hover:shadow-md" data-product-name="Coffee Maker" data-price="55.95" aria-label="Add Coffee Maker to cart">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-md overflow-hidden transform hover:scale-105 transition duration-300 flex flex-col" data-product-id="p7">
+                 <img src="img/lamp.jpg" alt="Desk Lamp" class="product-image" onerror="this.onerror=null; this.src='https://placehold.co/600x400/cccccc/ffffff?text=Lamp+Not+Found'; this.style.objectFit='contain';">
+                <div class="p-4 flex flex-col flex-grow">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-2">Desk Lamp</h3>
+                    <p class="text-gray-600 text-sm mb-4 flex-grow">Brighten your workspace with this adjustable LED lamp.</p>
+                    <div class="flex justify-between items-center mt-auto">
+                        <span class="text-xl font-bold text-gray-900">$29.50</span>
+                        <button class="add-to-cart-btn bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg transition duration-300 shadow-sm hover:shadow-md" data-product-name="Desk Lamp" data-price="29.50" aria-label="Add Desk Lamp to cart">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-md overflow-hidden transform hover:scale-105 transition duration-300 flex flex-col" data-product-id="p8">
+                 <img src="img/cable.jpg" alt="Yoga Mat" class="product-image" onerror="this.onerror=null; this.src='https://placehold.co/600x400/cccccc/ffffff?text=Yoga+Mat+Not+Found'; this.style.objectFit='contain';">
+                <div class="p-4 flex flex-col flex-grow">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-2">Cable IPHONE</h3>
+                    <p class="text-gray-600 text-sm mb-4 flex-grow">High-quality, CABLE IPHONE ORIGINALE UCB LIGHTNING</p>
+                    <div class="flex justify-between items-center mt-auto">
+                        <span class="text-xl font-bold text-gray-900">$34.99</span>
+                        <button class="add-to-cart-btn bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg transition duration-300 shadow-sm hover:shadow-md" data-product-name="Yoga Mat" data-price="34.99" aria-label="Add Yoga Mat to cart">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+           </div>
+    </main>
+
+    <footer class="bg-gray-800 text-gray-300 py-8 mt-16 rounded-t-lg">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h4 class="text-lg font-semibold text-white mb-3">WebStore</h4>
+                    <p class="text-sm">Your favorite place to shop online for quality goods. Based in Djamaa, Elmgeyar.</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold text-white mb-3">Quick Links</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="hover:text-white transition duration-200">About Us</a></li>
+                        <li><a href="#" class="hover:text-white transition duration-200">Contact</a></li>
+                        <li><a href="#" class="hover:text-white transition duration-200">FAQ</a></li>
+                        <li><a href="#" class="hover:text-white transition duration-200">Shipping & Returns</a></li>
+                        <li><a href="#" class="hover:text-white transition duration-200">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold text-white mb-3">Contact Us</h4>
+                     <p class="text-sm mb-1"> Hai El-Bolayda, Djamaa, Elmgeyar</p>
+                     <p class="text-sm mb-1">Email: mmmm@gmail.com</p>
+                     <p class="text-sm">Phone: 079999999</p>
+                </div>
+            </div>
+            <hr class="border-gray-700 my-6">
+            <p class="text-center text-sm text-gray-400">&copy; 2025 Web Store. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <div id="notification" class="notification">Item added to cart!</div>
+
+    <div id="cart-modal-overlay" class="modal-overlay fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4 hidden opacity-0">
+        <div id="cart-modal-content" class="modal-content bg-white rounded-lg shadow-xl w-full max-w-lg max-h-[80vh] flex flex-col transform scale-95 opacity-0">
+            <div class="flex justify-between items-center p-4 border-b border-gray-200">
+                <h3 class="text-xl font-semibold text-gray-800">Your Cart</h3>
+                <button id="close-cart-btn" class="text-gray-400 hover:text-gray-600" aria-label="Close cart">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+
+            <div id="cart-items-container" class="p-4 overflow-y-auto flex-grow">
+                <p id="cart-empty-msg" class="text-gray-500 text-center py-4">Your cart is empty.</p>
+                </div>
+
+            <div class="p-4 border-t border-gray-200 bg-gray-50 rounded-b-lg">
+                <div class="flex justify-between items-center mb-4">
+                    <span class="text-lg font-semibold text-gray-800">Total:</span>
+                    <span id="cart-total" class="text-xl font-bold text-gray-900">$0.00</span>
+                </div>
+                <button id="checkout-btn" class="w-full bg-green-500 hover:bg-green-600 text-white font-semibold py-3 px-4 rounded-lg transition duration-300 shadow-sm hover:shadow-md disabled:opacity-50 disabled:cursor-not-allowed" disabled>
+                    Proceed to Checkout
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script> </body>
+</html>
