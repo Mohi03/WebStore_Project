@@ -1,0 +1,47 @@
+/* Custom styles */
+body {
+    font-family: 'Inter', sans-serif; /* Apply Inter font */
+    background-color: #f7fafc; /* Slightly lighter gray background */
+}
+/* Style for the notification message */
+.notification {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 12px 24px;
+    background-color: #48bb78; /* Tailwind green-500 */
+    color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out, transform 0.3s ease-in-out;
+    transform: translateX(-50%) translateY(20px);
+}
+.notification.show {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+/* Add hover effect for nav links */
+nav a {
+    transition: color 0.2s ease-in-out;
+}
+/* Product Image styling */
+.product-image {
+     width: 100%;
+     height: 12rem; /* 192px */
+     object-fit: cover;
+     background-color: #e2e8f0;
+}
+/* Cart Modal Styling */
+.modal-overlay {
+    transition: opacity 0.3s ease-in-out;
+}
+.modal-content {
+    transition: transform 0.3s ease-in-out;
+}
+/* Hide scrollbar when modal is open */
+body.modal-open {
+    overflow: hidden;
+}
