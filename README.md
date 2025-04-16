@@ -24,8 +24,8 @@ This project is a single-page HTML demonstration of a basic web store front-end.
 
 ## Technologies Used
 
-* **HTML5
-* **CSS3
+* **HTML
+* **CSS
 * **JavaScript
 * **php
 
